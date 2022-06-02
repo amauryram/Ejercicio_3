@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Ejercicio_3</string>
+    <string name="splas_Text">Facultad de Ingeniería</string>
+    <string name="splash_autor">Create by Amaury Ramírez</string>
+    <string name="version">v 1.0</string>
+
+    <string name="De">De:</string>
+    <string name="Peso">$</string>
+
+    <string name="textBold">bold</string>
+    <string name="textItalic">italic</string>
+
+    <string name="leyenda">Compa/venta de artículos de Ingeniería</string>
+
 </resources>

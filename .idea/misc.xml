@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1955" />
+        <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/drawable/ic_baseline_local_shipping_24.xml" value="0.1955" />
+        <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
         <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/layout/activity_main.xml" value="0.209375" />
         <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/layout/activity_producto_detalles.xml" value="0.1" />
-        <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/layout/list_elements.xml" value="0.2" />
+        <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/amaur/Documents/GitHub/Ejercicio_3/app/src/main/res/layout/list_elements.xml" value="0.5" />
       </map>
     </option>
   </component>
