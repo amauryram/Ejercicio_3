@@ -3,18 +3,22 @@ package com.midominio.ejercicio_3.view.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.midominio.ejercicio_3.R
 import com.midominio.ejercicio_3.databinding.ActivityMainBinding
 import com.midominio.ejercicio_3.model.ProductApi
 import com.midominio.ejercicio_3.model.Producto
+import com.midominio.ejercicio_3.view.adapter.Adaptador
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Adaptador.OnItemListener {
 
     private val BASE_URL= "https://www.serverbpw.com/"
     private val LOG_TAG = "LOGS"
@@ -38,18 +42,33 @@ class MainActivity : AppCompatActivity() {
         call.enqueue(object: Callback<List<Producto>>{
             override fun onResponse(call: Call<List<Producto>>,response: Response<List<Producto>>
             ) {
-
                 Log.d(LOG_TAG,"Respuesta del Servidor: ${response.toString()}")
                 Log.d(LOG_TAG, "Datos: ${response.body().toString()}")
+
+                binding.pbConexion.visibility = View.INVISIBLE
+
+                val adaptador=Adaptador(this@MainActivity, response.body()!!, this@MainActivity )
+
+                val recycleView = binding.rvMenu
+
+                recycleView.layoutManager = LinearLayoutManager(this@MainActivity)
+
+                recycleView.adapter = adaptador
 
             }
 
             override fun onFailure(call: Call<List<Producto>>, t: Throwable) {
                 Log.d(LOG_TAG,"ERROR")
                 Toast.makeText(this@MainActivity, "No hay conexión", Toast.LENGTH_SHORT).show()
+                binding.pbConexion.visibility = View.INVISIBLE
+
             }
 
         })
+
+    }
+
+    override fun onItemClick(Product: Producto) {
 
     }
 }
