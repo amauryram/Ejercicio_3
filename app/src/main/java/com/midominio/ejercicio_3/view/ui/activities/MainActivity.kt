@@ -1,5 +1,6 @@
 package com.midominio.ejercicio_3.view.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -68,7 +69,15 @@ class MainActivity : AppCompatActivity(), Adaptador.OnItemListener {
 
     }
 
-    override fun onItemClick(Product: Producto) {
+    override fun onItemClick(product: Producto) {
+        val param = Bundle()
 
+        param.putString("id",product.id)
+
+        val intent =Intent(this, ProductoDetalles::class.java)
+
+        intent.putExtras(param)
+
+        startActivity(intent)
     }
 }
